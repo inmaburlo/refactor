@@ -8,16 +8,16 @@ public class Mensaje {
 	private String texto;
 	private Date fecha;
 	
-	public Mensaje(Usuario destino, Usuario origen,String texto){
+	public Mensaje(Usuario destinatario, Usuario origen,String texto){
 		this.origen=origen;
-		this.destino=destino;
+		this.destino=destinatario;
 		this.texto=texto;
 		this.fecha=new Date();	
 	}
 	@Override
 	public String toString(){
 		String salida="";
-		salida+="MENSAJE DE "+origen.nombre+" PARA: "+destino.nombre;
+		salida+="MENSAJE DE "+origen.getNombreDest()+" PARA: "+destino.getNombreDest();
 		salida+="\n"+fecha.toString();
 		salida+="\n-----------------";
 		salida+=texto;
